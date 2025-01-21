@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Interactive Seat Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive seat booking system for movie theaters or event venues built using **React**, **Redux**, and **Vite**. The app enables users to select seats dynamically, view real-time pricing, and book seats with an intuitive user interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+### Seat Layout
+- Grid display of seats (e.g., 6 rows x 10 seats per row).
+- Seats are color-coded based on pricing tiers:
+  - **Silver**: Front rows, ₹100.
+  - **Gold**: Middle rows, ₹150.
+  - **Platinum**: Back rows, ₹200.
+- Each seat has a unique identifier (e.g., A1, A2, ..., F10).
+- Seats are clickable for selection and deselection.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Dynamic Pricing
+- Real-time updates for seat prices and total cost as seats are selected/deselected.
 
-- Configure the top-level `parserOptions` property like this:
+### Booking Summary
+- Displays selected seats and their respective prices.
+- Shows total cost and includes a **"Book Now"** button for confirmation.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Constraints
+- Maximum of **8 seats** can be selected at a time.
+- An error message appears if more than 8 seats are selected.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technologies Used
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **React** (with Vite for fast development).
+- **Redux** (with Redux Toolkit for state management).
+- **TypeScript**.
+- **Tailwind CSS** for styling.
+
+---
+
+## Installation & Usage
+
+### Prerequisites
+
+Ensure the following are installed on your machine:
+- Node.js (v14 or higher)
+- npm 
+
+### Steps to Run Locally
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/majmalmdt/Interactive-Seat-Booking-System.git
+   cd Interactive-Seat-Booking-System
+   npm install
+   npm run dev
